@@ -14,7 +14,7 @@ typedef struct {
 
 // Useful for constructing input and output arrays with a nicer syntax
 #define SNInput(...) (double[]){__VA_ARGS__}
-#define SNOutput SNInput
+#define SNOutput(...) SNInput(__VA_ARGS__)
 
 // The actual neural network class
 @interface SNNeuralNet : NSObject
