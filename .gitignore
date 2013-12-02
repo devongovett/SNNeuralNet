@@ -1,0 +1,15 @@
+.DS_Store
+.Trashes
+*.swp
+*.lock
+*~.nib
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.o
+
+DerivedData/
+build/
+project.xcworkspace/
+xcuserdata/
