@@ -59,5 +59,4 @@ typedef struct {
 // It can only be trained once.
 @property (readonly) BOOL isTrained;
 
-
 @end
