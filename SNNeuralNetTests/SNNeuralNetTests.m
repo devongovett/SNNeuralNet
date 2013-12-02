@@ -22,6 +22,8 @@
     SNNeuralNet *net = [[SNNeuralNet alloc] initWithInputs:numInputs outputs:1];
     [net train:records numRecords:numRecords];
     
+    XCTAssertEqual(net.isTrained, YES, @"");
+    
     for (int i = 0; i < numRecords; i++) {
         double *output = [net runInput:records[i].input];
         XCTAssertEqualWithAccuracy(*output, records[i].output[0], 0.15, @"");
