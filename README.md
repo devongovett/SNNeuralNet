@@ -1,7 +1,7 @@
-SNNeuralNetwork
+SNNeuralNet
 ===============
 
-A neural network library for Objective-C based on [brain.js](https://github.com/harthur/brain).
+A neural network library for Objective-C based on [brain.js](https://github.com/harthur/brain), for iOS and Mac OS X.
 
 ## Example
 
@@ -28,7 +28,7 @@ printf("%f\n", output[0]); // 0.987
 
 ## Creating an SNNeuralNet
 
-There are several ways of creating an `SNNeuralNetwork` instance. The base init method is:
+There are several ways of creating an `SNNeuralNet` instance. The base init method is:
 
 ```objective-c
 SNNeuralNet *net = [[SNNeuralNet alloc] initWithInputs:2 outputs:1];
