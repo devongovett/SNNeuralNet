@@ -107,4 +107,20 @@
     XCTAssert(error < 0.2, @"network did not train until error threshold was reached");
 }
 
+- (void)testHiddenLayers
+{
+    SNTrainingRecord records[] = {
+        {SNInput(0,0), SNOutput(0)},
+        {SNInput(0,1), SNOutput(0)},
+        {SNInput(1,0), SNOutput(0)},
+        {SNInput(1,1), SNOutput(1)}
+    };
+    
+    SNNeuralNet *net = [[SNNeuralNet alloc] initWithInputs:2 hiddenLayers:@[@3, @4] outputs:1];
+    net.minError = 0.2;
+    double error = [net train:records numRecords:4];
+    
+    XCTAssert(error < 0.2, @"network did not train until error threshold was reached");
+}
+
 @end

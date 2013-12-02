@@ -74,7 +74,7 @@ double *randos(int size)
         sizes[0] = numInputs;
         if (hiddenLayers != nil) {
             for (int i = 0; i < hiddenLayers.count; i++)
-                sizes[i + 1] = [hiddenLayers[i] doubleValue];
+                sizes[i + 1] = [hiddenLayers[i] intValue];
         } else {
             // one hidden layer by default
             sizes[1] = fmax(3, floor(numInputs / 2));
