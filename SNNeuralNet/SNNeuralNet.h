@@ -17,7 +17,7 @@ typedef struct {
 #define SNOutput(...) SNInput(__VA_ARGS__)
 
 // The actual neural network class
-@interface SNNeuralNet : NSObject
+@interface SNNeuralNet : NSObject <NSCoding>
 
 // Initializes an SNNeuralNet with a number of inputs and outputs
 - (instancetype)initWithInputs:(int)numInputs outputs:(int)numOutputs;

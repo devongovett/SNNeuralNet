@@ -239,4 +239,84 @@ double *randos(int size)
     }
 }
 
+#pragma mark - NSCoding
+
+// helper macros for initWithCoder and encodeWithCoder
+#define ArrayFromNSData(key) {                   \
+    NSData *data = dict[@"key"];                 \
+    memcpy(layer->key, data.bytes, data.length); \
+}
+
+#define NSDataFromArray(data, size) [NSData dataWithBytes:data length:size * sizeof(double)]
+
+- (instancetype)initWithCoder:(NSCoder *)decoder
+{
+    self = [self initWithInputs:[decoder decodeIntForKey:@"numInputs"]
+                                            hiddenLayers:[decoder decodeObjectForKey:@"hiddenLayers"]
+                                                 outputs:[decoder decodeIntForKey:@"numOutputs"]];
+    
+    if (self) {
+        self.maxIterations = [decoder decodeIntForKey:@"maxIterations"];
+        self.minError = [decoder decodeDoubleForKey:@"minError"];
+        self.learningRate = [decoder decodeDoubleForKey:@"learningRate"];
+        self.momentum = [decoder decodeDoubleForKey:@"momentum"];
+        _isTrained = [decoder decodeBoolForKey:@"isTrained"];
+        
+        NSArray *layersArray = [decoder decodeObjectForKey:@"layers"];
+        for (int i = 0; i <= outputLayer; i++) {
+            NSDictionary *dict = layersArray[i];
+            SNLayer *layer = &layers[i];
+            
+            // copy data from encoded layers to self
+            ArrayFromNSData(deltas);
+            ArrayFromNSData(errors);
+            ArrayFromNSData(outputs);
+            if (i > 0) {
+                ArrayFromNSData(biases);
+                ArrayFromNSData(weights);
+                ArrayFromNSData(changes);
+            }
+        }
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    // encode each layer as a dictionary, with each key as NSData
+    NSMutableArray *layersArray = [NSMutableArray array];
+    
+    for (int i = 0; i <= outputLayer; i++) {
+        SNLayer *layer = &layers[i];
+        int size = sizes[i];
+        
+        NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithDictionary:@{
+            @"deltas": NSDataFromArray(layer->deltas, size),
+            @"errors": NSDataFromArray(layer->errors, size),
+            @"outputs": NSDataFromArray(layer->outputs, size),
+        }];
+        
+        if (i > 0) {
+            dictionary[@"biases"] = NSDataFromArray(layer->weights, size);
+            dictionary[@"weights"] = NSDataFromArray(layer->weights, size * sizes[i - 1]);
+            dictionary[@"changes"] = NSDataFromArray(layer->changes, size * sizes[i - 1]);
+        }
+        
+        [layersArray addObject:dictionary];
+    }
+    
+    [encoder encodeInt:self.numInputs forKey:@"numInputs"];
+    [encoder encodeObject:self.hiddenLayers forKey:@"hiddenLayers"];
+    [encoder encodeInt:self.numOutputs forKey:@"numOutputs"];
+    
+    [encoder encodeInt:self.maxIterations forKey:@"maxIterations"];
+    [encoder encodeDouble:self.minError forKey:@"minError"];
+    [encoder encodeDouble:self.learningRate forKey:@"learningRate"];
+    [encoder encodeDouble:self.momentum forKey:@"momentum"];
+    
+    [encoder encodeBool:self.isTrained forKey:@"isTrained"];
+    [encoder encodeObject:layersArray forKey:@"layers"];
+}
+
 @end

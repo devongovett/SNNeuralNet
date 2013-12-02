@@ -125,4 +125,39 @@
     XCTAssert(error < 0.2, @"network did not train until error threshold was reached");
 }
 
+- (void)testNSCoding
+{
+    SNTrainingRecord records[] = {
+        {SNInput(0,0), SNOutput(0)},
+        {SNInput(0,1), SNOutput(0)},
+        {SNInput(1,0), SNOutput(0)},
+        {SNInput(1,1), SNOutput(1)}
+    };
+    
+    SNNeuralNet *net = [[SNNeuralNet alloc] initWithInputs:2 hiddenLayers:@[@3, @4] outputs:1];
+    net.maxIterations = 25000;
+    net.minError = 0.002;
+    net.learningRate = 0.5;
+    net.momentum = 0.2;
+    
+    [net train:records numRecords:4];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:net];
+    SNNeuralNet *unarchivedNet = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    XCTAssertEqual(unarchivedNet.numInputs, net.numInputs, @"");
+    XCTAssertEqualObjects(unarchivedNet.hiddenLayers, net.hiddenLayers, @"");
+    XCTAssertEqual(unarchivedNet.numOutputs, net.numOutputs, @"");
+    
+    XCTAssertEqual(unarchivedNet.maxIterations, net.maxIterations, @"");
+    XCTAssertEqual(unarchivedNet.minError, net.minError, @"");
+    XCTAssertEqual(unarchivedNet.learningRate, net.learningRate, @"");
+    XCTAssertEqual(unarchivedNet.momentum, net.momentum, @"");
+    XCTAssertEqual(unarchivedNet.isTrained, net.isTrained, @"");
+    
+    double *unarchivedOutput = [unarchivedNet runInput:SNInput(1,1)];
+    double *expectedOutput = [net runInput:SNInput(1,1)];
+    XCTAssertEqualWithAccuracy(unarchivedOutput[0], expectedOutput[0], 0.15, @"");
+}
+
 @end
