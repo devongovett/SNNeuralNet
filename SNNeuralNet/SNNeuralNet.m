@@ -77,7 +77,7 @@ double *randos(int size)
                 sizes[i + 1] = [hiddenLayers[i] intValue];
         } else {
             // one hidden layer by default
-            sizes[1] = fmax(3, floor(numInputs / 2));
+            sizes[1] = MAX(3, numInputs / 2);
         }
         
         sizes[outputLayer] = numOutputs;
