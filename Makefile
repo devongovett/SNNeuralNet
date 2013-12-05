@@ -12,6 +12,20 @@ build:
 test: build
 	xctool $(IOS_OPTS) -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator
 	xctool $(MAC_OPTS) -sdk macosx -configuration Release test -test-sdk macosx
+	
+docs:
+	rm -rf docs
+	appledoc --project-name SNNeuralNet \
+					 --project-company "Devon Govett" \
+					 --company-id com.devongovett.SNNeuralNet \
+					 --keep-intermediate-files \
+					 --no-create-docset \
+					 --create-html \
+					 --ignore *.m \
+					 --no-warn-missing-output-path \
+					 --exit-threshold 2 \
+					 SNNeuralNet/
+	mv html docs
 
-.PHONY: clean build test
+.PHONY: clean build test docs
 .DEFAULT_GOAL := test

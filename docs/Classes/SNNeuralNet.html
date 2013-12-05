@@ -1,0 +1,1115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SNNeuralNet Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">SNNeuralNet </a></h1>
+				<a id="developerHome" href="../index.html">Devon Govett</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SNNeuralNet Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/hiddenLayers">&nbsp;&nbsp;&nbsp;&nbsp;hiddenLayers</option>
+	
+	<option value="//api/name/isTrained">&nbsp;&nbsp;&nbsp;&nbsp;isTrained</option>
+	
+	<option value="//api/name/learningRate">&nbsp;&nbsp;&nbsp;&nbsp;learningRate</option>
+	
+	<option value="//api/name/maxIterations">&nbsp;&nbsp;&nbsp;&nbsp;maxIterations</option>
+	
+	<option value="//api/name/minError">&nbsp;&nbsp;&nbsp;&nbsp;minError</option>
+	
+	<option value="//api/name/momentum">&nbsp;&nbsp;&nbsp;&nbsp;momentum</option>
+	
+	<option value="//api/name/numInputs">&nbsp;&nbsp;&nbsp;&nbsp;numInputs</option>
+	
+	<option value="//api/name/numOutputs">&nbsp;&nbsp;&nbsp;&nbsp;numOutputs</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithInputs:hiddenLayers:outputs:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithInputs:hiddenLayers:outputs:</option>
+	
+	<option value="//api/name/initWithInputs:outputs:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithInputs:outputs:</option>
+	
+	<option value="//api/name/initWithTrainingData:numRecords:numInputs:numOutputs:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTrainingData:numRecords:numInputs:numOutputs:</option>
+	
+	<option value="//api/name/runInput:">&nbsp;&nbsp;&nbsp;&nbsp;- runInput:</option>
+	
+	<option value="//api/name/train:numRecords:">&nbsp;&nbsp;&nbsp;&nbsp;- train:numRecords:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initializing a neural network">Initializing a neural network</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Neural network tasks">Neural network tasks</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuration">Configuration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties from initialization">Properties from initialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Other properties">Other properties</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hiddenLayers">hiddenLayers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isTrained">isTrained</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/learningRate">learningRate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxIterations">maxIterations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minError">minError</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/momentum">momentum</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numInputs">numInputs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numOutputs">numOutputs</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithInputs:hiddenLayers:outputs:">initWithInputs:hiddenLayers:outputs:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithInputs:outputs:">initWithInputs:outputs:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTrainingData:numRecords:numInputs:numOutputs:">initWithTrainingData:numRecords:numInputs:numOutputs:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/runInput:">runInput:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/train:numRecords:">train:numRecords:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SNNeuralNet Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SNNeuralNet Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCoding</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SNNeuralNet.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Represents a neural network. After creating a network with a specified number of inputs,
+outputs, and hidden layers, use the <a href="#//api/name/train:numRecords:">train:numRecords:</a> method to train the network with an
+array of SNTrainingRecord structures. Then use the <a href="#//api/name/runInput:">runInput:</a> method to predict output for
+unknown inputs.</p>
+
+<p>This example approximates the XOR function using a neural network:</p>
+
+<pre><code>#import "SNNeuralNet.h"
+
+SNTrainingRecord records[] = {
+    {SNInput(0,0), SNOutput(0)},
+    {SNInput(0,1), SNOutput(1)},
+    {SNInput(1,0), SNOutput(1)},
+    {SNInput(1,1), SNOutput(0)}
+};
+
+SNNeuralNet *net = [[SNNeuralNet alloc] initWithTrainingData:records numRecords:4 numInputs:2 numOutputs:1];
+
+double *output = [net runInput:SNInput(1, 0)];
+printf("%f\n", output[0]); // 0.987
+</code></pre>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initializing a neural network" name="task_Initializing a neural network"></a>
+						<h3 class="subsubtitle task-title">Initializing a neural network</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithInputs:outputs:">&ndash;&nbsp;initWithInputs:outputs:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithInputs:hiddenLayers:outputs:">&ndash;&nbsp;initWithInputs:hiddenLayers:outputs:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithTrainingData:numRecords:numInputs:numOutputs:">&ndash;&nbsp;initWithTrainingData:numRecords:numInputs:numOutputs:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Neural network tasks" name="task_Neural network tasks"></a>
+						<h3 class="subsubtitle task-title">Neural network tasks</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/train:numRecords:">&ndash;&nbsp;train:numRecords:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/runInput:">&ndash;&nbsp;runInput:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Configuration" name="task_Configuration"></a>
+						<h3 class="subsubtitle task-title">Configuration</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/maxIterations">&nbsp;&nbsp;maxIterations</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minError">&nbsp;&nbsp;minError</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/learningRate">&nbsp;&nbsp;learningRate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/momentum">&nbsp;&nbsp;momentum</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Properties from initialization" name="task_Properties from initialization"></a>
+						<h3 class="subsubtitle task-title">Properties from initialization</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numInputs">&nbsp;&nbsp;numInputs</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numOutputs">&nbsp;&nbsp;numOutputs</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hiddenLayers">&nbsp;&nbsp;hiddenLayers</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Other properties" name="task_Other properties"></a>
+						<h3 class="subsubtitle task-title">Other properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isTrained">&nbsp;&nbsp;isTrained</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/hiddenLayers" title="hiddenLayers"></a>
+	<h3 class="subsubtitle method-title">hiddenLayers</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Array of hidden layer sizes the network was created with. Read only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *hiddenLayers</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Array of hidden layer sizes the network was created with. Read only.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isTrained" title="isTrained"></a>
+	<h3 class="subsubtitle method-title">isTrained</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Whether the neural network has been trained. It can only be trained once.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) BOOL isTrained</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Whether the neural network has been trained. It can only be trained once.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/learningRate" title="learningRate"></a>
+	<h3 class="subsubtitle method-title">learningRate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The learning rate of the network</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) double learningRate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The learning rate of the network</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/maxIterations" title="maxIterations"></a>
+	<h3 class="subsubtitle method-title">maxIterations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The maxium number of iterations to perform while training</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) int maxIterations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The maxium number of iterations to perform while training</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minError" title="minError"></a>
+	<h3 class="subsubtitle method-title">minError</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The error threshold to reach while training, unless <a href="#//api/name/maxIterations">maxIterations</a> is reached first</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) double minError</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The error threshold to reach while training, unless <a href="#//api/name/maxIterations">maxIterations</a> is reached first</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/momentum" title="momentum"></a>
+	<h3 class="subsubtitle method-title">momentum</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Momentum of learning from previous inputs</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) double momentum</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Momentum of learning from previous inputs</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numInputs" title="numInputs"></a>
+	<h3 class="subsubtitle method-title">numInputs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Number of inputs the network was created with. Read only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) int numInputs</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Number of inputs the network was created with. Read only.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numOutputs" title="numOutputs"></a>
+	<h3 class="subsubtitle method-title">numOutputs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Number of outputs the network was created with. Read only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) int numOutputs</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Number of outputs the network was created with. Read only.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithInputs:hiddenLayers:outputs:" title="initWithInputs:hiddenLayers:outputs:"></a>
+	<h3 class="subsubtitle method-title">initWithInputs:hiddenLayers:outputs:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes an SNNeuralNet with a number of inputs, an array of
+hidden layer sizes, and a number of outputs</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithInputs:(int)<em>numInputs</em> hiddenLayers:(NSArray *)<em>hiddenLayers</em> outputs:(int)<em>numOutputs</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numInputs</em></dt>
+			<dd><p>Number of inputs to network</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hiddenLayers</em></dt>
+			<dd><p>Array of hidden layer sizes.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numOutputs</em></dt>
+			<dd><p>Number of outputs from network</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized SNNeuralNet</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes an SNNeuralNet with a number of inputs, an array of
+hidden layer sizes, and a number of outputs</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithInputs:outputs:" title="initWithInputs:outputs:"></a>
+	<h3 class="subsubtitle method-title">initWithInputs:outputs:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes an SNNeuralNet with a number of inputs and outputs, and one default hidden layer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithInputs:(int)<em>numInputs</em> outputs:(int)<em>numOutputs</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numInputs</em></dt>
+			<dd><p>Number of inputs to network</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numOutputs</em></dt>
+			<dd><p>Number of outputs from network</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized SNNeuralNet</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes an SNNeuralNet with a number of inputs and outputs, and one default hidden layer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTrainingData:numRecords:numInputs:numOutputs:" title="initWithTrainingData:numRecords:numInputs:numOutputs:"></a>
+	<h3 class="subsubtitle method-title">initWithTrainingData:numRecords:numInputs:numOutputs:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes and trains an SNNeuralNet in one step</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithTrainingData:(SNTrainingRecord *)<em>trainingData</em> numRecords:(int)<em>records</em> numInputs:(int)<em>numInputs</em> numOutputs:(int)<em>numOutputs</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>trainingData</em></dt>
+			<dd><p>Array of training records</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>records</em></dt>
+			<dd><p>Number of records in trainingData</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numInputs</em></dt>
+			<dd><p>Number of inputs to network</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>numOutputs</em></dt>
+			<dd><p>Number of outputs from network</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized and trained SNNeuralNet</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes and trains an SNNeuralNet in one step</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/runInput:" title="runInput:"></a>
+	<h3 class="subsubtitle method-title">runInput:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Runs the neural network on an array of inputs of length <a href="#//api/name/numInputs">numInputs</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (double *)runInput:(double *)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>Array of doubles to use as input to the neural network.
+Could be created with the SNInput macro</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of doubles with output of neural network</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Runs the neural network on an array of inputs of length <a href="#//api/name/numInputs">numInputs</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/train:numRecords:" title="train:numRecords:"></a>
+	<h3 class="subsubtitle method-title">train:numRecords:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Trains the neural network with a set of training data.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (double)train:(SNTrainingRecord *)<em>trainingData</em> numRecords:(int)<em>records</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>trainingData</em></dt>
+			<dd><p>Array of training records</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>records</em></dt>
+			<dd><p>Number of records in trainingData</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the amount of training error that occurred.
+The neural network can only be trained once, and will
+return -1 if you attempt to train it multiple times.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Trains the neural network with a set of training data.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SNNeuralNet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Devon Govett. All rights reserved. (Last updated: 2013-12-05)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
