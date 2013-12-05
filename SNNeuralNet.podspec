@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "SNNeuralNet"
-  s.version               = "0.1.0"
+  s.version               = "0.2.0"
   s.summary               = "A neural network library for Objective-C"
   s.homepage              = "https://github.com/devongovett/SNNeuralNet"
   s.license               = 'MIT'
