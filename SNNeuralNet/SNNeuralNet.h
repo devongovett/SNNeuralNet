@@ -31,11 +31,27 @@ typedef struct {
 #define SNOutput(...) SNInput(__VA_ARGS__)
 
 /**
- *  Represents a neural network. After creating a network with a specified number of inputs,
- *  outputs, and hidden layers, use the train:numRecords: method to train the network with an
- *  array of SNTrainingRecord structures. Then use the runInput: method to predict output for
- *  unknown inputs.
- */
+Represents a neural network. After creating a network with a specified number of inputs,
+outputs, and hidden layers, use the train:numRecords: method to train the network with an
+array of SNTrainingRecord structures. Then use the runInput: method to predict output for
+unknown inputs.
+
+This example approximates the XOR function using a neural network:
+
+    #import "SNNeuralNet.h"
+
+    SNTrainingRecord records[] = {
+        {SNInput(0,0), SNOutput(0)},
+        {SNInput(0,1), SNOutput(1)},
+        {SNInput(1,0), SNOutput(1)},
+        {SNInput(1,1), SNOutput(0)}
+    };
+
+    SNNeuralNet *net = [[SNNeuralNet alloc] initWithTrainingData:records numRecords:4 numInputs:2 numOutputs:1];
+
+    double *output = [net runInput:SNInput(1, 0)];
+    printf("%f\n", output[0]); // 0.987
+*/
 @interface SNNeuralNet : NSObject <NSCoding>
 
 /// @name Initializing a neural network
